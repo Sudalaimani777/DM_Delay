@@ -57,12 +57,16 @@ const MessageForm = () => {
                     )
                 }
 
-                {sentMessage && (
+                {sentMessage ? (
                     <section className="bg-green-200 border rounded p-3 text-green-900">
                         <p className="font-semibold">Message Sent Successfully :</p>
                         <p>{sentMessage}</p>
                     </section>
-                )}
+                ) : (
+                    <p className="text-sm mt-4 text-center">Wait...</p>
+                )
+                
+                }
 
             </section>
         </>
