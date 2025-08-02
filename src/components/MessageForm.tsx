@@ -1,10 +1,17 @@
+import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 
 
 const MessageForm = () => {
-    
+
+    const [message, setMessage] = useState <string> ("");
+    const [delay, setDelay] = useState <number> (10);
+    const [isSending, setIsSending] = useState <boolean> (false);
+    const [timerId, setTimerId] = useState <NodeJS.Timeout | null> (null);
+    const [sentMessage, isSentMessage] = useState <string> ("");
+
   return (
     <>
         <section className="max-w-md mx-auto mt-[20px] p-6 border rounded-lg shadow-sm bg-amber-300 space-y-4">
